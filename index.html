@@ -1362,9 +1362,10 @@
     }
 
     // Success
+    const cb = captchaState.onSuccess;
     closeCaptcha();
     showToast('✅ 驗證通過！');
-    if (captchaState.onSuccess) captchaState.onSuccess();
+    if (cb) cb();
   }
 
   function closeCaptcha() {
